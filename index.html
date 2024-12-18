@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarhus Creative Corners</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="header-images">
+            <img src="denmark.png" alt="Image 1">
+            <img src="heart.png" alt="Image 2">
+            <img src="profile.png" alt="Image 3">
+        </div>
+    </header> 
+    <h1 class="heading">Aarhus' Creative Corners</h1>
+    <h4 class="heading2">Discover tranquil hidden gems for your creative journey!</h4>
+    <div class="cards">
+        <div class="card">
+            <nav> 
+                <a href="bogs.html">
+                    <img src="cafe.jpg" alt="Card Image 1"> 
+                </a> 
+                <div class="card"></div> 
+            </nav>
+            <div class="card-text">Unwind with wine, books, and endless inspiration at <strong>LØVE'S BOG OG VINCAFÉ</strong> </div>
+            <button>Try it today!</button>
+        </div>
+        <div class="card">
+            <nav> 
+                <a href="daarhus.html">
+                    <img src="domen.png" alt="Card Image 2"> 
+                </a> 
+                <div class="card"></div> 
+            </nav>
+            <div class="card-text">Discover inspiration with panoramic views at <strong> DOMEN AARHUS</strong> </div>
+            <button>Try it today!</button>
+        </div>
+        <div class="card">
+            <nav> 
+                <a href="kunsthal.html">
+                    <img src="Kunsthal.jpg" alt="Card Image 3"> 
+                </a> 
+                <div class="card"></div> 
+            </nav>
+            <div class="card-text">Find your Muse at <strong>KUNSTHAL AARHUS</strong></div>
+            <button>Try it today!</button>
+        </div>
+    </div>
+    <div class="banner">
+        Share your moments with us:
+        <img src="instagram.png" alt="instagram">
+        <img src="facebook.png" alt="facebook">
+        <img src="pinterest.png" alt="pinterest">
+        <img src="tiktok.png" alt="tiktok">
+    </div>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var map = L.map('map').setView([56.162939, 10.203921], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            L.marker([56.162939, 10.203921]).addTo(map).bindPopup('Location 1').openPopup();
+            L.marker([56.150939, 10.203921]).addTo(map).bindPopup('Location 2');
+            L.marker([56.162939, 10.223921]).addTo(map).bindPopup('Location 3');
+        }
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>

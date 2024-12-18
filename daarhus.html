@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <nav> 
+            <a href="index.html">
+                <img src="logo.png" alt="Logo" class="logo"> 
+            </a> 
+            <div class="header-images"></div> 
+        </nav>
+        
+        <div class="header-images">
+            <img src="denmark.png" alt="Image 1">
+            <img src="heart.png" alt="Image 2">
+            <img src="profile.png" alt="Image 3">
+        </div>
+    </header>
+    <aside class="cta">
+        Suggested for you
+    </aside>
+    <aside class="cta2">
+        Løves' bog og Vincafe
+    </aside>
+    <h3 class="heading3"> Services Hidden Histories Connect & Share</h3>
+        <div class="container">
+            <div class="box" id="box1"><strong>Menu</strong>
+            <p>Espresso... 25 <br>
+                Cappucino.....35 <br>
+                Ice coffe....40 <br>
+                Bread with cheese...50<br>
+                Chocolate cake...55 </p>
+            </div>
+            <div class="box" id="box2"> <strong>Events</strong>
+                <p class="p">Join our Book club <br>
+                    <u>See calendar!</u></p>
+            </div>
+            <div class="box" id="box3"><strong>Contact</strong>
+                <p class="p">Norregade 32, 8000 Aarhus <br>
+                    <u>1 min video (how to get here)</u> <br>
+                    Monday- Friday: 9-23 <br>
+                    Weekend: 9-24 <br>
+                    +45 27 83 16 33</p>
+            </div>
+        </div>
+    <div class="banner">
+        Share with us
+        <img src="instagram.png" alt="Facebook">
+        <img src="facebook.png" alt="Twitter">
+        <img src="pinterest.png" alt="Instagram">
+        <img src="tiktok.png" alt="Tiktok">
+    </div>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var map = L.map('map').setView([56.162939, 10.203921], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            L.marker([56.162939, 10.203921]).addTo(map).bindPopup('Location 1').openPopup();
+            L.marker([56.150939, 10.203921]).addTo(map).bindPopup('Location 2');
+            L.marker([56.162939, 10.223921]).addTo(map).bindPopup('Location 3');
+        }
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>
+
